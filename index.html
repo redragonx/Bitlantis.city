@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--Based on codepen: https://codepen.io/svtslvskl/pen/VvzMQr-->
+<head>
+
+
+    <title>A Meaningful Page Title</title>
+
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+
+</head>
+
+<body>
+
+    <div class='terminal'>
+        <div class='screen'>“Cyberspace. A consensual hallucination experienced daily by billions of legitimate
+            operators, in every nation, by children being taught mathematical concepts... A graphic representation of
+            data abstracted from banks of every computer in the human system. Unthinkable complexity. Lines of light
+            ranged in the nonspace of the mind, clusters and constellations of data. Like city lights, receding...” ―
+            William Gibson, Neuromancer</div>
+    </div>
+
+
+</body>
+
+
+<script>
+
+    (function () {
+        "use strict";
+
+        setTimeout(function () { alert("Hello"); }, 3000);
+        var element, string, length;
+
+        element = document.querySelector(".screen");
+        string = element.innerText;
+        length = string.length;
+
+        function timer(delay, repetitions) {
+            var n, i;
+
+            n = 0;
+            i = window.setInterval(function () {
+                element.innerText = string.substring(0, n);
+                if (n++ === repetitions) {
+                    window.clearInterval(i);
+                }
+            }, delay);
+        }
+
+        timer(100, length);
+    })();
+
+
+</script>
+
+</html>
